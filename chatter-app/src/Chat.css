@@ -37,7 +37,7 @@
 
 /* #1-chat body */
 .chat-body {
-  background: rgb(212, 212, 212);
+  background: rgb(221, 221, 221);
   flex: 1;
   padding: 30px;
   overflow: scroll;
@@ -65,16 +65,50 @@
   margin-bottom: 30px;
 }
 
+.chat-receiver {
+  margin-left: auto;
+  background-color: #80a8ff;
+}
+
 /* chat name and timestamp */
 .chat-name {
   position: absolute;
   top: -21px;
   font-weight: 800;
   font-size: small;
-  left: 5px;
 }
 
 .chat-timestamp {
   margin-left: 10px;
   font-size: xx-small;
+}
+
+/* chat-footer */
+.chat-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 62px;
+  border-top: 1px solid lightgrey;
+}
+
+.chat-footer > form {
+  flex: 1;
+  display: flex;
+}
+
+.chat-footer > form > input {
+  flex: 1;
+  border-radius: 30px;
+  padding: 10px;
+  border: none;
+}
+
+.chat-footer > form > button {
+  display: none;
+}
+
+.chat-footer > .MuiSvgIcon-root {
+  color: grey;
+  padding: 10px;
 }
