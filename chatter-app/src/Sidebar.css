@@ -46,6 +46,7 @@
 .sidebar-searchContainer > input {
   border: none;
   margin-left: 10px;
+  width: 100%;
 }
 
 .sidebar-searchContainer > .MuiSvgIcon-root {
