@@ -7,10 +7,12 @@ import ChatIcon from "@material-ui/icons/Chat";
 import { SearchOutlined } from "@material-ui/icons/";
 import SidebarChat from "./SidebarChat";
 import db from "./firebase";
+import { useStateValue } from "./StateProvider";
 
 function Sidebar() {
   // connecting to db
   const [rooms, setRooms] = useState([]);
+  const [{ user }, dispatch] = useStateValue();
 
   useEffect(() => {
     const unsubscribe = db
@@ -30,7 +32,7 @@ function Sidebar() {
 
       {/* #1 */}
       <div className="sidebar-header">
-        <Avatar />
+        <Avatar src={user?.photoURL} />
         <div className="sidebar-headerRight">
           <IconButton>
             <DonutLargeIcon />
