@@ -2,6 +2,7 @@ import { Avatar } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import "./SidebarChat.css";
 import db from "./firebase";
+import { Link } from "react-router-dom";
 
 function SidebarChat({ id, name, addNewChat }) {
   // hook for random new chat avatars
@@ -23,13 +24,15 @@ function SidebarChat({ id, name, addNewChat }) {
 
   //condition - if not addNewChat then render sidebarChat otherwise render createChat
   return !addNewChat ? (
-    <div className="sidebarChat">
-      <Avatar src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`} />
-      <div className="sidebarChat-info">
-        <h2>{name}</h2>
-        <p>last seen</p>
+    <Link to={`/rooms/${id}`}>
+      <div className="sidebarChat">
+        <Avatar src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`} />
+        <div className="sidebarChat-info">
+          <h2>{name}</h2>
+          <p>last seen</p>
+        </div>
       </div>
-    </div>
+    </Link>
   ) : (
     <div onClick={createChat} className="sidebarChat">
       <h2>Add new chat room</h2>
