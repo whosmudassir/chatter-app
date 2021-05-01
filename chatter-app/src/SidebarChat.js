@@ -8,6 +8,21 @@ function SidebarChat({ id, name, addNewChat }) {
   // hook for random new chat avatars
   const [seed, setSeed] = useState("");
 
+  const [messages, setMessages] = useState("");
+
+  //for listing last msg
+  useEffect(() => {
+    if (id) {
+      db.collection("rooms")
+        .doc(id)
+        .collection("messages")
+        .orderBy("timestamp", "desc")
+        .onSnapshot((snapshot) => {
+          setMessages(snapshot.docs.map((doc) => doc.data()));
+        });
+    }
+  }, [id]);
+
   useEffect(() => {
     setSeed(Math.floor(Math.random() * 5000));
   }, []);
@@ -29,7 +44,7 @@ function SidebarChat({ id, name, addNewChat }) {
         <Avatar src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`} />
         <div className="sidebarChat-info">
           <h2>{name}</h2>
-          <p>last seen</p>
+          <p>{messages[0]?.message}</p>
         </div>
       </div>
     </Link>
