@@ -3,6 +3,7 @@
   padding: 20px;
   cursor: pointer;
   border-bottom: 1px solid rgb(235, 235, 235);
+  position: relative;
 }
 
 .sidebarChat:hover {
@@ -19,6 +20,11 @@
   margin-left: 15px;
 }
 
+.deleteicon {
+  right: 15px;
+  position: absolute;
+  color: #45a1ff;
+}
 a {
   text-decoration: none !important;
   color: black;

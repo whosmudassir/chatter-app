@@ -1,8 +1,10 @@
-import { Avatar } from "@material-ui/core";
+import { Avatar, IconButton } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import "./SidebarChat.css";
 import db from "./firebase";
+import firebase from "firebase";
 import { Link } from "react-router-dom";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 function SidebarChat({ id, name, addNewChat }) {
   // hook for random new chat avatars
@@ -33,6 +35,7 @@ function SidebarChat({ id, name, addNewChat }) {
     if (roomName) {
       db.collection("rooms").add({
         name: roomName,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       });
     }
   };
@@ -50,7 +53,7 @@ function SidebarChat({ id, name, addNewChat }) {
     </Link>
   ) : (
     <div onClick={createChat} className="sidebarChat">
-      <h2>Add new chat room</h2>
+      <h2>+ Add new chat room</h2>
     </div>
   );
 }
