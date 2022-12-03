@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Sidebar.css";
+import "./index.css";
 import { Avatar, IconButton } from "@material-ui/core";
 import DonutLargeIcon from "@material-ui/icons/DonutLarge";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -7,10 +7,10 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import ChatIcon from "@material-ui/icons/Chat";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { SearchOutlined } from "@material-ui/icons/";
-import SidebarChat from "./SidebarChat";
-import db from "./firebase";
-import { useStateValue } from "./StateProvider";
-import { actionTypes } from "./reducer";
+import SidebarChat from "./SidebarChat/index";
+import db from "../../firebase";
+import { useStateValue } from "../../StateProvider";
+import { actionTypes } from "../../stateManagement/reducer";
 
 function Sidebar() {
   // connecting to db
