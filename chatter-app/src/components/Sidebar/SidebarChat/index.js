@@ -1,7 +1,7 @@
 import { Avatar, IconButton } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
-import "./SidebarChat.css";
-import db from "./firebase";
+import "./index.css";
+import db from "../../../firebase";
 import firebase from "firebase";
 import { Link } from "react-router-dom";
 import DeleteIcon from "@material-ui/icons/Delete";
