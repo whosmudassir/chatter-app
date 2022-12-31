@@ -1,21 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
-import { Avatar, IconButton } from "@material-ui/core";
-import DonutLargeIcon from "@material-ui/icons/DonutLarge";
-import DeleteIcon from "@material-ui/icons/Delete";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
-import ChatIcon from "@material-ui/icons/Chat";
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { SearchOutlined } from "@material-ui/icons/";
 import SidebarChat from "./SidebarChat/index";
 import db from "../../firebase";
-import { useStateValue } from "../../StateProvider";
-import { actionTypes } from "../../stateManagement/reducer";
+import SidebarHeader from "./SidebarHeader";
 
 function Sidebar() {
   // connecting to db
   const [rooms, setRooms] = useState([]);
-  const [{ user }, dispatch] = useStateValue();
 
   useEffect(() => {
     const unsubscribe = db
@@ -30,24 +22,9 @@ function Sidebar() {
     };
   }, []);
 
-  const logout = () => {
-    dispatch({
-      type: actionTypes.SET_USER,
-      user: null,
-    });
-  };
-
   return (
     <div className="sidebar">
-      <div className="sidebar-header">
-        <Avatar src={user?.photoURL} />
-        <div className="sidebar-headerRight">
-          <button className="signout-btn" onClick={logout}>
-            <ExitToAppIcon />
-            &nbsp;Sign out
-          </button>
-        </div>
-      </div>
+      <SidebarHeader />
 
       <div className="sidebar-search">
         <div className="sidebar-searchContainer">

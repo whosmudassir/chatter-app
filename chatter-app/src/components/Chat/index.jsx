@@ -54,9 +54,6 @@ function Chat() {
 
   return (
     <div className="chat">
-      {/* 3 main - header, body, footer */}
-
-      {/* #1 */}
       <div className="chat-header">
         <div className="chat-headerInfo">
           <h3>{roomName}</h3>
@@ -81,7 +78,6 @@ function Chat() {
         </div>
       </div>
 
-      {/* #2 */}
       <div className="chat-body">
         {messages.map((message) => (
           <p
@@ -98,7 +94,6 @@ function Chat() {
         ))}
       </div>
 
-      {/* #3 */}
       <div className="chat-footer">
         <InsertEmoticonIcon />
         <form>
