@@ -39,21 +39,9 @@ function Sidebar() {
 
   return (
     <div className="sidebar">
-      {/* 3 main things - header,search,chats */}
-
-      {/* #1 */}
       <div className="sidebar-header">
         <Avatar src={user?.photoURL} />
         <div className="sidebar-headerRight">
-          {/* <IconButton>
-            <DonutLargeIcon />
-          </IconButton>
-          <IconButton>
-            <ChatIcon />
-          </IconButton>
-          <IconButton>
-            <MoreVertIcon />
-          </IconButton> */}
           <button className="signout-btn" onClick={logout}>
             <ExitToAppIcon />
             &nbsp;Sign out
@@ -61,7 +49,6 @@ function Sidebar() {
         </div>
       </div>
 
-      {/* #2 */}
       <div className="sidebar-search">
         <div className="sidebar-searchContainer">
           <SearchOutlined />
@@ -69,7 +56,6 @@ function Sidebar() {
         </div>
       </div>
 
-      {/* #3 */}
       <div className="sidebar-chats">
         <SidebarChat addNewChat />
         {rooms.map((room) => (
