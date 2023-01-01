@@ -25,8 +25,9 @@ function Login() {
     <div className="login">
       <div className="login-container">
         <img src={logo} />
-        <div className="login-text">
-          <h1>Sign in to Chatter App</h1>
+        <div>
+          <p className="login-text">Chatter App</p>
+          <p>Create channels, hangout with everyone</p>
         </div>
         <Button onClick={signIn}>Sign In With Google</Button>
       </div>
