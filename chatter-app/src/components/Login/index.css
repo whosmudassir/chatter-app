@@ -32,3 +32,28 @@
   background-color: #45a1ff;
   color: white;
 }
+
+.login-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 50px;
+  }
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 50px;
+  }
+}
+
+@media (max-width: 425px) {
+  .login-container {
+    padding: 20px;
+  }
+}
