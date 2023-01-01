@@ -1,17 +1,18 @@
+@import url("../../assets/fonts/index.css");
+
 .login {
-  background-color: #45a1ff;
+  background-color: white;
   height: 100vh;
   width: 100vw;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 }
 
 .login-container {
-  padding: 100px;
   text-align: center;
   background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px;
 }
 
 .login-container > img {
@@ -21,21 +22,34 @@
 }
 
 .login-container > button {
-  margin: 20px;
-  text-transform: inherit !important;
-  background-color: #001443;
-  color: white;
-  font-weight: bold;
+  margin-top: 26px;
 }
 
-.login-container > button:hover {
-  background-color: #45a1ff;
-  color: white;
+.login-heading {
+  font-size: 28px;
+  font-family: Heading;
+  padding-bottom: 8px;
+  color: #2b2b2b;
 }
 
 .login-text {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 16px;
+  font-family: Medium;
+  color: #3d3d3d;
+}
+
+.login-btn {
+  background-color: white !important;
+  border: 1px solid rgb(167, 167, 167) !important;
+  color: #3d3d3d !important;
+  padding: 8px 10px;
+}
+
+.login-btn-text {
+  padding-left: 6px;
+  font-family: Medium;
+  font-size: 14px;
+  text-transform: capitalize;
 }
 
 /* responsive */

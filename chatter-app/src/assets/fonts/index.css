@@ -1,0 +1,20 @@
+/* fonts */
+@font-face {
+  font-family: Regular;
+  src: url("./Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: Medium;
+  src: url("./Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: Bold;
+  src: url("./Montserrat-Bold.ttf");
+}
+
+@font-face {
+  font-family: Heading;
+  src: url("./Montserrat-Bold.ttf");
+}
