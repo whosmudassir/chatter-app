@@ -1,8 +1,15 @@
 import React from "react";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import { withStyles } from "@material-ui/core/styles";
 import "./index.css";
 
 const Header = () => {
+  const StyledGitHubIcon = withStyles({
+    root: {
+      fontSize: "26px",
+    },
+  })(GitHubIcon);
+
   return (
     <div className="header-icon">
       <button
@@ -11,7 +18,7 @@ const Header = () => {
         }}
         className="header-btn"
       >
-        <GitHubIcon />
+        <StyledGitHubIcon />
       </button>
     </div>
   );
