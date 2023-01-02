@@ -6,6 +6,8 @@
   align-self: flex-end;
   font-family: Regular;
   font-size: 14px;
+  justify-content: center;
+  text-align: justify;
 }
 
 @media (max-width: 768px) {

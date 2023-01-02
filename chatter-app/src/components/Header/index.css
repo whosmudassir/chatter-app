@@ -3,3 +3,9 @@
   display: flex;
   align-self: flex-end;
 }
+
+.header-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
