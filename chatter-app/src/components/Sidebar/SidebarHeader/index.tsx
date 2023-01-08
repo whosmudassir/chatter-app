@@ -19,7 +19,7 @@ const SidebarHeader = () => {
     <div className="sidebar-header">
       <Avatar src={user?.photoURL} />
 
-      <p>Chatter App</p>
+      <p className="header-text">Chatter App</p>
 
       <div className="sidebar-headerRight">
         <button className="signout-btn" onClick={logout}>

@@ -1,7 +1,33 @@
+@import url("../../assets/fonts/index.css");
+
 .chat {
   flex: 0.65;
   display: flex;
   flex-direction: column;
+}
+
+.empty-chat {
+  background-color: white;
+  flex: 0.65;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border-left: 1px solid lightgray; */
+}
+
+.empty-chat-text {
+  font-family: Medium;
+}
+
+.empty-chat-header {
+  font-family: Bold;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.empty-chat-img {
+  width: 80px;
 }
 
 /* #1-chat header */
@@ -11,6 +37,7 @@
   display: flex;
   align-items: center;
   border-bottom: 1px solid lightgrey;
+  background-color: white;
 }
 
 /* headerInfo */
@@ -111,4 +138,17 @@
 .chat-footer > .MuiSvgIcon-root {
   color: grey;
   padding: 10px;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .chat,
+  .empty-chat {
+    position: absolute;
+    background-color: white;
+    display: flex;
+    flex: 1;
+    height: 100vh;
+    width: 100vw;
+  }
 }

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
-import { SearchOutlined } from "@material-ui/icons/";
 import SidebarChat from "./SidebarChat/index";
 import db from "../../firebase";
 import SidebarHeader from "./SidebarHeader";
@@ -25,13 +24,6 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <SidebarHeader />
-
-      <div className="sidebar-search">
-        <div className="sidebar-searchContainer">
-          <SearchOutlined />
-          <input placeholder="Search or start new chat room" type="text" />
-        </div>
-      </div>
 
       <div className="sidebar-chats">
         <SidebarChat addNewChat />
