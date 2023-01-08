@@ -8,6 +8,7 @@ import "./index.css";
 import db from "../../firebase";
 import firebase from "firebase";
 import { useStateValue } from "../../StateProvider";
+import logo from "../../assets/images/logo.png";
 
 function Chat() {
   //for room clicks
@@ -53,64 +54,78 @@ function Chat() {
   };
 
   return (
-    <div className="chat">
-      <div className="chat-header">
-        <div className="chat-headerInfo">
-          <h3>{roomName}</h3>
-          <p>
-            last seen{" "}
-            {new Date(
-              messages[messages.length - 1]?.timestamp?.toDate()
-            ).toUTCString()}
+    <>
+      {!roomId ? (
+        <div className="empty-chat">
+          <img className="empty-chat-img" src={logo} />
+          <p className="empty-chat-text empty-chat-header">
+            Welcome to Chatter
+          </p>
+          <p className="empty-chat-text">
+            Select/Create a chat room to start chatting
           </p>
         </div>
+      ) : (
+        <div className="chat">
+          <div className="chat-header">
+            <div className="chat-headerInfo">
+              <h3>{roomName}</h3>
+              <p>
+                last seen{" "}
+                {new Date(
+                  messages[messages.length - 1]?.timestamp?.toDate()
+                ).toUTCString()}
+              </p>
+            </div>
 
-        <div className="chat-headerRight">
-          <IconButton>
-            <SearchOutlined />
-          </IconButton>
-          <IconButton>
-            <AttachFile />
-          </IconButton>
-          <IconButton>
-            <MoreVert />
-          </IconButton>
+            <div className="chat-headerRight">
+              <IconButton>
+                <SearchOutlined />
+              </IconButton>
+              <IconButton>
+                <AttachFile />
+              </IconButton>
+              <IconButton>
+                <MoreVert />
+              </IconButton>
+            </div>
+          </div>
+
+          <div className="chat-body">
+            {messages.map((message) => (
+              <p
+                className={`chat-message ${
+                  message.name === user.displayName && "chat-receiver"
+                }`}
+              >
+                <span className="chat-name">{message.name}</span>
+                {message.message}
+                <span className="chat-timestamp">
+                  {new Date(message.timestamp?.toDate()).toUTCString()}
+                </span>
+              </p>
+            ))}
+          </div>
+
+          <div className="chat-footer">
+            <InsertEmoticonIcon />
+            <form>
+              {" "}
+              <input
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Type a message"
+                type="text"
+              />
+              <button onClick={sendMessage} type="submit">
+                Send a message
+              </button>
+            </form>
+            <MicIcon />
+          </div>
         </div>
-      </div>
-
-      <div className="chat-body">
-        {messages.map((message) => (
-          <p
-            className={`chat-message ${
-              message.name === user.displayName && "chat-receiver"
-            }`}
-          >
-            <span className="chat-name">{message.name}</span>
-            {message.message}
-            <span className="chat-timestamp">
-              {new Date(message.timestamp?.toDate()).toUTCString()}
-            </span>
-          </p>
-        ))}
-      </div>
-
-      <div className="chat-footer">
-        <InsertEmoticonIcon />
-        <form>
-          {" "}
-          <input
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Type a message"
-            type="text"
-          />
-          <button onClick={sendMessage} type="submit">
-            Send a message
-          </button>
-        </form>
-        <MicIcon />
-      </div>
-    </div>
+      )}
+    </>
   );
 }
 
