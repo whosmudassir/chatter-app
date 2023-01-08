@@ -2,6 +2,7 @@ import { Avatar, IconButton } from "@material-ui/core";
 import { AttachFile, MoreVert, SearchOutlined } from "@material-ui/icons";
 import MicIcon from "@material-ui/icons/Mic";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./index.css";
@@ -9,6 +10,7 @@ import db from "../../firebase";
 import firebase from "firebase";
 import { useStateValue } from "../../StateProvider";
 import logo from "../../assets/images/logo.png";
+import { useHistory } from "react-router-dom";
 
 function Chat() {
   //for room clicks
@@ -21,6 +23,12 @@ function Chat() {
   const [messages, setMessages] = useState([]);
 
   const [{ user }, dispatch] = useStateValue();
+
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push("/rooms");
+  };
 
   //use effect for the name change when id changes
   useEffect(() => {
@@ -56,7 +64,7 @@ function Chat() {
   return (
     <>
       {!roomId ? (
-        <div className="empty-chat">
+        <div className="empty-chat hide-empty-chat">
           <img className="empty-chat-img" src={logo} />
           <p className="empty-chat-text empty-chat-header">
             Welcome to Chatter
@@ -68,27 +76,17 @@ function Chat() {
       ) : (
         <div className="chat">
           <div className="chat-header">
-            <div className="chat-headerInfo">
-              <h3>{roomName}</h3>
-              <p>
-                last seen{" "}
-                {new Date(
-                  messages[messages.length - 1]?.timestamp?.toDate()
-                ).toUTCString()}
-              </p>
+            <div className="chat-back-btn">
+              <IconButton onClick={handleClick}>
+                <ArrowBackIcon />
+              </IconButton>
             </div>
 
-            <div className="chat-headerRight">
-              <IconButton>
-                <SearchOutlined />
-              </IconButton>
-              <IconButton>
-                <AttachFile />
-              </IconButton>
-              <IconButton>
-                <MoreVert />
-              </IconButton>
+            <div className="chat-room-title">
+              <h3 className="chat-room-name">{roomName}</h3>
             </div>
+
+            <div></div>
           </div>
 
           <div className="chat-body">
