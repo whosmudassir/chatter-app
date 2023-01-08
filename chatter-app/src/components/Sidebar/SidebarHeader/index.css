@@ -24,8 +24,7 @@
 }
 
 .signout-btn {
-  background-color: #45a1ff;
-  color: white;
+  color: #45a1ff;
   border-radius: 5px;
   border: none;
   display: flex;
@@ -33,6 +32,7 @@
   justify-content: space-between;
   padding: 5px;
   margin: 0;
+  font-family: Medium;
 }
 
 .sidebar-headerRight > .MuiSvgIcon-root {
