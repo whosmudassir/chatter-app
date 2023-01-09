@@ -13,15 +13,10 @@ import logo from "../../assets/images/logo.png";
 import { useHistory } from "react-router-dom";
 
 function Chat() {
-  //for room clicks
   const { roomId } = useParams();
-  //keep track of the room name
   const [roomName, setRoomName] = useState("");
-  //input field tracing - to pushe the messages in db
   const [input, setInput] = useState("");
-  //to keep track of messages
   const [messages, setMessages] = useState([]);
-
   const [{ user }, dispatch] = useStateValue();
 
   const history = useHistory();
@@ -30,7 +25,6 @@ function Chat() {
     history.push("/rooms");
   };
 
-  //use effect for the name change when id changes
   useEffect(() => {
     if (roomId) {
       db.collection("rooms")
@@ -92,14 +86,27 @@ function Chat() {
           <div className="chat-body">
             {messages.map((message) => (
               <p
-                className={`chat-message ${
-                  message.name === user.displayName && "chat-receiver"
+                className={` ${
+                  message.name === user.displayName
+                    ? "chat-receiver"
+                    : "chat-message"
                 }`}
               >
-                <span className="chat-name">{message.name}</span>
-                {message.message}
+                <span
+                  className={`${
+                    message.name === user.displayName
+                      ? "chat-receiver-name"
+                      : "chat-name"
+                  }`}
+                >
+                  {message.name}
+                </span>
+                <p className="chat-text">{message.message}</p>
                 <span className="chat-timestamp">
-                  {new Date(message.timestamp?.toDate()).toUTCString()}
+                  {new Date(message.timestamp?.toDate()).toLocaleString(
+                    "en-IN",
+                    { timeZone: "Asia/Kolkata" }
+                  )}
                 </span>
               </p>
             ))}

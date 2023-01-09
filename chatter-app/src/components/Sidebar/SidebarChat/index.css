@@ -29,3 +29,10 @@ a {
   text-decoration: none !important;
   color: black;
 }
+
+.sidebar-chat-message {
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
