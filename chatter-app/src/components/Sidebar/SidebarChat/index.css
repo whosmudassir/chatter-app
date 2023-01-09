@@ -1,9 +1,29 @@
+@import url("../../../assets/fonts/index.css");
+
 .sidebarChat {
   display: flex;
   padding: 20px;
   cursor: pointer;
   border-bottom: 1px solid rgb(235, 235, 235);
   position: relative;
+  align-items: center;
+}
+
+.add-group-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  cursor: pointer;
+  border-bottom: 1px solid rgb(235, 235, 235);
+  position: relative;
+  align-items: center;
+}
+
+.add-group-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: Medium;
 }
 
 .sidebarChat:hover {
@@ -30,9 +50,18 @@ a {
   color: black;
 }
 
+.sidebar-chat-name {
+  font-family: SemiBold;
+  font-size: 16px;
+  text-transform: capitalize;
+  letter-spacing: 0.3px;
+}
+
 .sidebar-chat-message {
   width: 100px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-family: Regular;
+  font-size: 14px;
 }
