@@ -177,13 +177,6 @@
   display: flex;
 }
 
-.chat-footer > form > input {
-  flex: 1;
-  border-radius: 30px;
-  padding: 10px;
-  border: none;
-}
-
 .chat-footer > form > button {
   display: none;
 }
@@ -212,6 +205,18 @@
   font-size: 22px;
   font-family: Bold;
   color: "#2b2b2b";
+  text-transform: capitalize;
+}
+
+.input-field {
+  flex: 1;
+  border-radius: 30px;
+  padding: 10px;
+  border: none;
+}
+
+.input-field:focus {
+  outline: none !important;
 }
 
 /* responsive */
