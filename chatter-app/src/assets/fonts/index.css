@@ -15,6 +15,16 @@
 }
 
 @font-face {
+  font-family: SemiBold;
+  src: url("./Montserrat-SemiBold.ttf");
+}
+
+@font-face {
   font-family: Heading;
   src: url("./Montserrat-Bold.ttf");
+}
+
+@font-face {
+  font-family: Black;
+  src: url("./Montserrat-Black.ttf");
 }

@@ -5,10 +5,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24.5px 20px;
+  padding: 20px 20px;
   border-right: 1px solid lightgrey;
   border-bottom: 1px solid lightgrey;
-  background-color: #ffffff;
+  background-color: #f0f0f0cc;
 }
 
 .sidebar-headerRight {
@@ -16,23 +16,28 @@
   align-items: right;
 }
 
+.header-logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  width: 2px;
+  color: black;
+  padding-right: 6px;
+  padding-top: 2px;
+}
+
 .header-text {
-  font-size: 22px;
-  font-family: Heading;
+  font-size: 24px;
+  font-family: Medium;
   text-align: center;
-  color: #2b2b2b;
+  color: black;
+  letter-spacing: -1px;
 }
 
 .signout-btn {
-  color: #45a1ff;
-  border-radius: 5px;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px;
-  margin: 0;
-  font-family: Medium;
+  /* color: black; */
 }
 
 .sidebar-headerRight > .MuiSvgIcon-root {
