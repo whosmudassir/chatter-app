@@ -24,6 +24,7 @@ function SidebarChat({ id, name, addNewChat }) {
   const [seed, setSeed] = useState("");
   const [openNameModal, setOpenNameModal] = useState(false);
   const [messages, setMessages] = useState("");
+  const [input, setInput] = useState("");
 
   //for listing last msg
   useEffect(() => {
@@ -43,15 +44,17 @@ function SidebarChat({ id, name, addNewChat }) {
   }, []);
 
   //function for the createchat- pops up prompt
-  const createChat = () => {
-    // const roomName = prompt("Please enter name for the new chat room");
-    // if (roomName) {
-    //   db.collection("rooms").add({
-    //     name: roomName,
-    //     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    //   });
-    // }
+  const createChat = (e) => {
+    e.preventDefault();
+    console.log("you typed >>>", input);
+    if (input) {
+      db.collection("rooms").add({
+        name: input,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      });
+    }
 
+    setInput("");
     setOpenNameModal(!openNameModal);
   };
 
@@ -82,6 +85,8 @@ function SidebarChat({ id, name, addNewChat }) {
               id="outlined-basic"
               label="Outlined"
               variant="outlined"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
             />
           </div>
         </DialogContent>
