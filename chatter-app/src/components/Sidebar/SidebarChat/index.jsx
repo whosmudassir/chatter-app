@@ -2,11 +2,16 @@ import {
   Avatar,
   IconButton,
   Button,
-  Modal,
+  Dialog,
+  DialogContent,
+  DialogActions,
+  DialogTitle,
+  TextField,
   Box,
   Typography,
 } from "@material-ui/core";
 import GroupAddIcon from "@material-ui/icons/GroupAdd";
+import CloseIcon from "@material-ui/icons/Close";
 import React, { useEffect, useState } from "react";
 import "./index.css";
 import db from "../../../firebase";
@@ -69,12 +74,22 @@ function SidebarChat({ id, name, addNewChat }) {
         </p>
       </div>
       {/* chat room modal */}
-      <Modal open={openNameModal} onClose={() => setOpenNameModal(false)}>
-        <div>
-          {" "}
-          <Typography>Please enter name for the new chat room</Typography>
-        </div>
-      </Modal>
+      <Dialog open={openNameModal} onClose={() => setOpenNameModal(false)}>
+        <DialogTitle sx={{ m: 0, p: 2 }}>Enter chat room name</DialogTitle>
+        <DialogContent>
+          <div>
+            <TextField
+              id="outlined-basic"
+              label="Outlined"
+              variant="outlined"
+            />
+          </div>
+        </DialogContent>
+
+        <DialogActions>
+          <Button onClick={createChat}>Save changes</Button>
+        </DialogActions>
+      </Dialog>
     </>
   );
 }
