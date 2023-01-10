@@ -213,10 +213,16 @@
   border-radius: 30px;
   padding: 10px;
   border: none;
+  font-size: 12px;
 }
 
 .input-field:focus {
   outline: none !important;
+}
+
+input[type="text"] {
+  font-size: 14px;
+  font-family: Regular;
 }
 
 /* responsive */
