@@ -26,6 +26,10 @@
   font-family: Medium;
 }
 
+.dialog {
+  padding: 20px;
+}
+
 .sidebarChat:hover {
   background-color: #ebebeb;
 }
