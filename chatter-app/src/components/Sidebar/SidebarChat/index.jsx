@@ -77,22 +77,42 @@ function SidebarChat({ id, name, addNewChat }) {
         </p>
       </div>
       {/* chat room modal */}
-      <Dialog open={openNameModal} onClose={() => setOpenNameModal(false)}>
-        <DialogTitle sx={{ m: 0, p: 2 }}>Enter chat room name</DialogTitle>
-        <DialogContent>
-          <div>
-            <TextField
-              id="outlined-basic"
-              label="Outlined"
-              variant="outlined"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-            />
-          </div>
+      <Dialog
+        fullWidth
+        maxWidth="sm"
+        open={openNameModal}
+        onClose={() => setOpenNameModal(false)}
+      >
+        <DialogTitle
+          className="title"
+          sx={{
+            m: 0,
+            p: 2,
+          }}
+        >
+          <div className="dailog-title"> Enter chat room name</div>
+        </DialogTitle>
+        <DialogContent
+          sx={{
+            maxWidth: "100%",
+          }}
+        >
+          <TextField
+            fullWidth
+            label="Name"
+            id="fullWidth"
+            variant="outlined"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+          />
         </DialogContent>
 
         <DialogActions>
-          <Button onClick={createChat}>Save changes</Button>
+          <div className="create-btn">
+            <Button onClick={createChat} color="primary">
+              <p>Create</p>
+            </Button>
+          </div>
         </DialogActions>
       </Dialog>
     </>
