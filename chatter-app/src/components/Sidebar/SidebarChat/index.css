@@ -69,3 +69,13 @@ a {
   font-family: Regular;
   font-size: 14px;
 }
+
+.create-btn {
+  margin-right: 16px;
+  margin-bottom: 8px;
+}
+
+.dailog-title {
+  /* border-bottom: 1px solid lightgray; */
+  padding-top: 8px;
+}
