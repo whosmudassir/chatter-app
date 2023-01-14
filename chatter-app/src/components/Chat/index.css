@@ -244,11 +244,4 @@ input[type="text"] {
   .chat-body {
     padding: 50px 20px;
   }
-
-  .chat-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: white;
-  }
 }
