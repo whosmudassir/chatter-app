@@ -2,6 +2,8 @@
   padding: 30px;
   display: flex;
   align-self: flex-end;
+  position: fixed;
+  top: 0;
 }
 
 .header-btn {
