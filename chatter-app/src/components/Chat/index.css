@@ -75,7 +75,7 @@
 /* #1-chat body */
 .chat-body {
   background-color: #f0f0f0cc;
-  flex: 1;
+  height: 100vh - 90px -63px;
   padding: 50px;
   overflow: scroll;
 }
