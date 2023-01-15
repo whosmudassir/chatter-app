@@ -4,6 +4,8 @@
   flex: 0.65;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  position: relative;
 }
 
 .empty-chat {
@@ -36,12 +38,17 @@
 /* #1-chat header */
 /* header */
 .chat-header {
-  padding: 20px;
+  padding: 0px;
+  height: 89px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid lightgrey;
   background-color: white;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 /* headerInfo */
@@ -171,6 +178,11 @@
   margin-top: auto;
   min-height: 62px;
   border-top: 1px solid lightgrey;
+  position: absolute;
+  background-color: #efefef;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 .chat-footer > form {
