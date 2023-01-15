@@ -2,7 +2,10 @@
   padding: 30px;
   display: flex;
   align-self: flex-end;
-  justify-self: center;
+  justify-self: flex-start;
+  position: fixed;
+
+  top: 0;
 }
 
 .header-btn {

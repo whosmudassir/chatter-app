@@ -9,6 +9,9 @@
   font-size: 14px;
   justify-self: flex-end;
   text-align: justify;
+  position: fixed;
+
+  bottom: 0;
 }
 
 @media (max-width: 768px) {
