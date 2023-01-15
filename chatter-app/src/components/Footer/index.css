@@ -2,6 +2,7 @@
 
 .footer-icon {
   padding: 30px;
+  margin-top: auto;
   display: flex;
   align-self: flex-end;
   font-family: Regular;

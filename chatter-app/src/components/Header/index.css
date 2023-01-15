@@ -2,6 +2,7 @@
   padding: 30px;
   display: flex;
   align-self: flex-end;
+  margin-bottom: auto;
 }
 
 .header-btn {
