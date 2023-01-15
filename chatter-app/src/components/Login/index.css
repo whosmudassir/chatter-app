@@ -8,21 +8,14 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  position: relative;
 }
 
 .login-container {
   text-align: center;
   background-color: white;
-  padding-bottom: 2.5rem;
-
-  align-self: center;
-  justify-self: center;
 }
 
 .login-container > img {
-  object-fit: contain;
   height: 190px;
   margin: -35px;
 }
@@ -60,20 +53,11 @@
 
 /* responsive */
 @media (max-width: 768px) {
-  .login-container {
-    padding: 50px;
-  }
 }
 
 /* responsive */
 @media (max-width: 768px) {
-  .login-container {
-    padding: 50px;
-  }
 }
 
 @media (max-width: 425px) {
-  .login-container {
-    padding: 20px;
-  }
 }
