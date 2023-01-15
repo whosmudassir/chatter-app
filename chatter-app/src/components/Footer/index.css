@@ -2,13 +2,16 @@
 
 .footer-icon {
   padding: 30px;
-  margin-top: auto;
+  /* margin-top: auto; */
   display: flex;
-  align-self: flex-end;
+  /* align-self: flex-end; */
   font-family: Regular;
   font-size: 14px;
   justify-content: center;
   text-align: justify;
+  position: absolute;
+  bottom: 0;
+  height: 2.5rem;
 }
 
 @media (max-width: 768px) {

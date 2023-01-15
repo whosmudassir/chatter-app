@@ -8,11 +8,17 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  position: relative;
 }
 
 .login-container {
   text-align: center;
   background-color: white;
+  padding-bottom: 2.5rem;
+
+  align-self: center;
+  justify-self: center;
 }
 
 .login-container > img {
