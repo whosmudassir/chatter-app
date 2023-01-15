@@ -4,14 +4,11 @@
   padding: 30px;
   /* margin-top: auto; */
   display: flex;
-  /* align-self: flex-end; */
+  align-self: flex-end;
   font-family: Regular;
   font-size: 14px;
-  justify-content: center;
+  justify-self: flex-end;
   text-align: justify;
-  position: absolute;
-  bottom: 0;
-  height: 2.5rem;
 }
 
 @media (max-width: 768px) {
