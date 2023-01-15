@@ -258,5 +258,6 @@ input[type="text"] {
 
   .chat-body {
     padding: 50px 20px;
+    padding-top: 120px;
   }
 }
