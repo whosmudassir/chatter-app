@@ -1,6 +1,7 @@
 import { Avatar, IconButton } from "@material-ui/core";
 import { AttachFile, MoreVert, SearchOutlined } from "@material-ui/icons";
 import MicIcon from "@material-ui/icons/Mic";
+import SendIcon from "@material-ui/icons/Send";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import React, { useState, useEffect } from "react";
@@ -44,13 +45,13 @@ function Chat() {
   // reaction after we click send message button
   const sendMessage = (e) => {
     e.preventDefault();
-    console.log("you typed >>>", input);
-
-    db.collection("rooms").doc(roomId).collection("messages").add({
-      message: input,
-      name: user.displayName,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    });
+    if (input.length > 0) {
+      db.collection("rooms").doc(roomId).collection("messages").add({
+        message: input,
+        name: user.displayName,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      });
+    }
 
     setInput("");
   };
@@ -113,9 +114,7 @@ function Chat() {
           </div>
 
           <div className="chat-footer">
-            <InsertEmoticonIcon />
-            <form>
-              {" "}
+            <form className="input-form">
               <input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
@@ -127,7 +126,10 @@ function Chat() {
                 Send a message
               </button>
             </form>
-            <MicIcon />
+            <SendIcon
+              style={{ color: input.length > 0 ? "#000000" : "#757575" }}
+              onClick={sendMessage}
+            />
           </div>
         </div>
       )}

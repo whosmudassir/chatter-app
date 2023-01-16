@@ -239,6 +239,14 @@ input[type="text"] {
   font-family: Regular;
 }
 
+.input-form {
+  padding-left: 20px;
+}
+
+.send-icon {
+  color: #000;
+}
+
 /* responsive */
 @media (max-width: 768px) {
   .chat,
