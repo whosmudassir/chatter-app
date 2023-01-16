@@ -8,7 +8,11 @@
   padding: 20px 20px;
   border-right: 1px solid lightgrey;
   border-bottom: 1px solid lightgrey;
-  background-color: #f0f0f0cc;
+
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  z-index: 1;
 }
 
 .sidebar-headerRight {
@@ -30,10 +34,10 @@
 
 .header-text {
   font-size: 24px;
-  font-family: Medium;
+  font-family: Heading;
   text-align: center;
   color: black;
-  letter-spacing: -1px;
+  letter-spacing: -2px;
 }
 
 .signout-btn {

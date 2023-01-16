@@ -21,8 +21,7 @@ const SidebarHeader = () => {
       <Avatar src={user?.photoURL} />
 
       <div className="header-logo-wrapper">
-        <ModeCommentIcon className="header-logo" />{" "}
-        <p className="header-text">Chatter</p>
+        <p className="header-text">Chatter App</p>
       </div>
 
       <div className="sidebar-headerRight">
