@@ -58,11 +58,12 @@ function SidebarChat({ id, name, addNewChat }) {
     setOpenNameModal(!openNameModal);
   };
 
-  //condition - if not addNewChat then render sidebarChat otherwise render createChat
   return !addNewChat ? (
     <Link to={`/rooms/${id}`}>
       <div className="sidebarChat">
-        <Avatar src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`} />
+        <Avatar
+          src={`  https://api.dicebear.com/9.x/pixel-art/svg?seed=${seed}`}
+        />
         <div className="sidebarChat-info">
           <p className="sidebar-chat-name">{name}</p>
           <p className="sidebar-chat-message">{messages[0]?.message}</p>
